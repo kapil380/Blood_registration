@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            .Header{
+        padding: 10px;
+        text-align:center;
+        background:cyan;
+        color:rgb(122, 108, 108);
+        font-size:20px;
+    }
+    .centre{
+        text-align: center;
+        padding:20px;
+    }
+        </style>
+    </head>
+    <body>
+        <div class="Header">
+            <h1>Searching page</h1><br><br>
+        </div>
+        <form  method="post" action="search">
+            {% csrf_token %}
+            <div class="centre">
+
+
+            
+            <Input type="text"  name="srh" placeholder="Enter name or username"><br><br>
+            <button type="submit">Search</button><br><br>
+            </form><br>
+            {% if messages %}
+                
+                    {% for k in messages %}
+                    <h1><li style="color: red; font-size: 30px;">{{k}}</li></h1>
+                    {% endfor %}
+                    
+                
+            {% endif %}
+            <br>
+            {% if sr %}
+                {% for k in sr %}
+                <table border="0px" width="300px">
+                    <tr>
+                        <td>Name:</td>
+                        <td>{{k.Donor_name}}</td>
+                    </tr>
+                    <tr>
+                        <td>Username:</td>
+                        <td>{{k.Username}}</td>
+                    </tr>
+                    <tr>
+                        <td>Contact no:</td>
+                        <td>{{k.Contact_no}}</td>
+                    </tr>
+                    <tr>
+                        <td>Blood group:</td>
+                        <td>{{k.Blood_group}}</td>
+                    </tr>
+                    <tr>
+                        <td>Address:</td>
+                        <td>{{k.Address}}</td>
+                    </tr>
+                </table>
+                <hr>
+                {% endfor %}
+            {% endif %}    
+            
+            </body>
+            </html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            .table{
+                text-align: center;
+                float:centre;
+            }
+        </style>
+    </head>
+    <body bgcolor="cyan">
+        <div class="table">
+
+
+        <h1><u><b>Blood Storage</b></u></h1>
+        <centre>
+            <table padding="0px" border="1px" width="200px">
+                <tr>
+                    
+                    <th> <h2><b>Blood group</b></h2></th>
+                    <th><h2><b>Blood storage(in ml)</b></h2></th>
+                        
+                    
+                </tr>
+            {% for r in r %}    
+                <tr>
+                    
+                    <td><h3>{{r.Blood_group}}</h3></td>
+                    <td> <h3>{{r.blood_amt}}</h3></td>
+                    </tr>
+            
+            
+            {% endfor %}   
+        </table> <br><br>
+        <button><a href="/"> Back to home page</a></button>
+    </centre>
+    </div>
+          
+    
+</html>

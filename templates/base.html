@@ -1,0 +1,103 @@
+{% load static %}
+<!DOCTYPE html>
+<html >
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}"/>
+<style>
+    .Header{
+        padding: 20px;
+        text-align:center;
+        background: red;
+        color:white;
+        font-size:20px;
+    }
+    .back{
+        background-color: red;
+        width:800px;
+        color:white;
+        text-align: center;
+        height: auto;
+         font-size:20px ;
+    }
+    #more{
+        display:none;
+    }
+    .copy{
+      text-align: center;
+      font-size: 20px;
+      color: white;  
+      width: 1600px;
+      height: 30px;
+      background-color: red;
+    }
+    
+</style>
+    </head>
+
+    <body>
+        {% block body %} {% endblock body %}
+        
+        
+            <div class="Header">
+              <h1>Blood Bank Management System</h1>  
+            </div>
+            <ul>
+                
+            
+               <li> <b><a  href="/">Home </a></b></li>
+              <li> <b> <a  href="register">Registration</a></b></li>
+              <li> <b> <a  href="search">Search</a></b></li>
+              <li> <b> <a  href="blood">Search for<br> blood match </a></b></li>
+              <li> <b> <a  href="store"> Storage </a></b></li>
+
+
+
+
+              
+              <br><br><br><br>
+            </ul>
+            <div class="back">
+                <h2>Blood Bank Management System.</h2>
+                <hr>
+            <p>A blood bank is a center where blood gathered as a result of blood donation is stored and preserved
+                for later use in blood transformation.The term "Blood Bank" typically refers to a division of a hospital
+                where the storage of blood product occurs and where proper testing is performed(to reduce the risk of transfusion<br>
+                related adverse events). However, it sometimes reffers to collection center, and indeed some hospitals also perform 
+                collections.<span id="dots"></span><span id="more">
+                While the first blood transfusion were made directly from donor to reciever before coagulation, it was 
+                discovered that by adding anticoagulant and refrigerating the blood it was possible to store it for some days, thus
+                opening the way for development for the blood banks.</span> </p>
+                    <button onclick="myFunction()" id="myBtn">Read more</button>
+                </div>
+                    <script>
+                        function myFunction(){
+                            var dots=document.getElementById("dots");
+                            var moretext=document.getElementById("more");
+                            var btntext=document.getElementById("myBtn");
+                            if(dots.style.display=="none")
+                            {
+                                dots.style.display="inline";
+                                btntext.innerHTML="Read more";
+                                moretext.style.display="none";
+                            }
+                            else{
+                                dots.style.display="none";
+                                btntext.innerHTML="Read Less";
+                                moretext.style.display="inline";
+                            }
+
+                        }
+                    </script>
+                    <br><br><br>
+                    <div class="copy">
+                        
+                    <p>Copyright &copy; 2020-All Rights Resrver-Blood Bank Management System</p>
+                </div>
+
+                
+    
+        
+    </body>
+</html>

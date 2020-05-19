@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            .Header{
+        padding: 10px;
+        text-align:center;
+        background:cyan;
+        color:rgb(122, 108, 108);
+        font-size:20px;
+    }
+    .centre{
+        text-align: center;
+        padding:20px;
+    }
+    
+        </style>
+    </head>
+    <body>
+        <div class="Header">
+            <h1>Searching for blood match</h1><br><br>
+        </div>
+        <form  method="post" action="blood">
+            {% csrf_token %}
+            <div class="centre">
+
+
+            
+           Enter blood group: <Input type="text"  name="b_group" placeholder="Enter blood group"><br><br>
+            Enter RH-Factor: <Input type="text"  name="rh" placeholder="Enter RH-Factor"><br><br>
+
+            <button type="submit">Search</button><br><br>
+            </form><br>
+            {% if messages %}
+                
+                    {% for k in messages %}
+                    <h1><li style="color: red; font-size: 30px;">{{k}}</li></h1>
+                    {% endfor %}
+                    
+                
+            {% endif %}
+            <br>
+            <div class="exe1">
+
+            
+                <table border="1px" width="0px">
+                    <tr>
+                        <td><b>Matching Blood group:</b></td>
+                        <td><b>Matching RH-Factor:</b></td>
+                    </tr>
+                
+            {% if sr %}
+                {% for k in sr %}
+                    <tr>
+                        <td>{{k.Blood_group}}</td>
+                        <td>{{k.Rh_factor}}</td>
+                    </tr>
+                    
+                </table>
+                {% endfor %}
+            {% endif %}
+        </div>
+                
+               
+            
+            
+                <button><a href="/"> Back to home page</a></button>
+            
+            </body>
+            </html>

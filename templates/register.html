@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            .Header{
+        padding: 10px;
+        text-align:center;
+        background:cyan;
+        color:rgb(122, 108, 108);
+        font-size:20px;
+    }
+    .centre{
+        text-align: center;
+        padding:20px;
+    }
+        </style>
+    </head>
+    <body>
+        <div class="Header">
+            <h1>Registration page</h1><br><br>
+        </div>
+        <form  method="post" action="register">
+            {% csrf_token %}
+            <div class="centre">
+
+
+            
+           <b> Donor_name </b> <Input type="text"  name="Donor_name"><br><br>
+            <b> Contact_no </b> <Input type="number"  name="Contact_no"><br><br>
+
+            <b> Username </b> <Input type="text"  name="Username"><br><br>
+                <b> Password </b> <Input type="password"  name="Password"><br><br>
+                    <b> Confirm_Password </b> <Input type="password"  name=Confirm_Password><br><br>
+
+
+                <b> Blood_group </b> <Input type="text"  name="Blood_group"><br><br>
+                    <b> Rh_factor </b> <Input type="text"  name="Rh_factor"><br><br>
+                        <b> Blood amount </b> <Input type="number"  name="blood_amt"><br><br>
+                <b> Address</b> <textarea  name="Address"> </textarea><br><br>
+
+
+
+
+
+                
+                 <input type="submit" value="Submit" id="Submit " > <br><br><button><a href="/"> Back to home page</a></button>
+                 <p>&copy; 2019-2020</p> 
+                 <h3 align="centre">
+                    <font color="blue" face="chiller">
+                        {{message}}
+                    </font>
+                </h3>
+        
+
+                </div>
+        </form>
+
+        
+      
+        
+    </body>
+</html>

@@ -1,0 +1,27 @@
+ul{
+    padding:0px;
+    margin:0px;
+    text-decoration: none;
+}
+ul li{
+        background-color:coral;
+        float:right;
+        text-align:centre;
+        width:700px;
+        height:60px;
+        text-decoration:none;
+
+    }
+ ul li a{
+        color:Black;
+        text-decoration:none;
+        font-size: 20px;
+        display:block;
+        padding:2px;
+
+     }
+ ul li a:hover{
+        background-color:red;
+     }
+        
+        
